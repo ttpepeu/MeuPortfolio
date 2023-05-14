@@ -55,7 +55,7 @@ class pags:
             button('https://app.powerbi.com/view?r=eyJrIjoiOTcxMmEwNjItN2U4MC00YmI0LTk4NmItNjBjNjMyODhiMzVhIiwidCI6ImZiMmIxMjBiLTdlMDMtNDQxZi1hNTJkLWVkODVkMzJiY2M3ZSJ9&pageName=ReportSection9479078add58ddd218d9')
 
             st.title('Análise sobre a Covid-19')
-            st.image('img/covid.gif ')
+            st.image('img/covid.png')
             st.info(
                 'Nessa análise com python você verá a evolução da covid-19 no Brasil.'
                 )
