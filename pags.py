@@ -39,21 +39,27 @@ class pags:
         col1, col2 = st.columns(2)
         
         with col1:
-            st.title('ChatBot')
+            """st.title('ChatBot')
             st.image('img/chatbot.jpg')
             st.info(
                 'Este chatbot está sendo desenvolvido para o laceb(Laboratório) do Mackenzie, com finalidade de fazer análise de dados das cidades da Região Metropolitana de Campinas.'
                 )
             sub_col1, sub_col2 = st.columns(2)
             with sub_col1:
-                button('Veja o código','https://github.com/lacelabcct/rsv2023')
+                button('Veja o código','#')
             with sub_col2: 
-                button('Veja o bot','https://lacelabcct-rsv2023-main-gfq3kv.streamlit.app')
+                button('Veja o bot','#')"""
+            st.title('Sistema de Banco')
+            st.image('img/atm.jpg')
+            st.info(
+                'Este repositório contém o desafio do curso de linguagem python da Digital Innovation One solucionado, objetivo era desenvolver um sistema de banco de maneira simples com as seguintes operações(Depósito, saque, extrato)'
+                )
+            button('Veja o código','https://github.com/ttpepeu/Sistema-de-Banco')
 
-            st.title('Análise sobre empresa de Telecom')
+            st.title('Análise Telecom')
             st.image('img/telecom01.jpg')
             st.info(
-                'Nessa análise com python você verá o desempenho dos serviços da empresa de telecom.'
+                'Nessa análise com python você verá o desempenho dos serviços da    empresa de telecom.'
                 )
             button('Veja o código','https://github.com/ttpepeu/Python-Telecom/tree/main')
         
@@ -65,7 +71,7 @@ class pags:
                 )
             button('Veja os dashboards','https://app.powerbi.com/view?r=eyJrIjoiOTcxMmEwNjItN2U4MC00YmI0LTk4NmItNjBjNjMyODhiMzVhIiwidCI6ImZiMmIxMjBiLTdlMDMtNDQxZi1hNTJkLWVkODVkMzJiY2M3ZSJ9&pageName=ReportSection9479078add58ddd218d9')
 
-            st.title('Análise sobre a Covid-19')
+            st.title('Análise Covid-19')
             st.image('img/covid.png')
             st.info(
                 'Nessa análise com python você verá a evolução da covid-19 no Brasil.'
