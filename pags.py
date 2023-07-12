@@ -1,4 +1,8 @@
 import streamlit as st
+import streamlit as st
+from bs4 import BeautifulSoup
+import requests
+
 
 # Botão desenvolvido em CSS
 def button(comment,link_url):
@@ -36,48 +40,41 @@ class pags:
         
     
     def pag2(): # Pagina de projetos
+        # Projetos PowerBI
+        st.title('Projetos feitos com Power BI')
+        st.image('img/pwoerbi.png')
+        st.info(
+            'Aqui você encontrará todos meus projetos feitos no Power BI.'
+            )
+        button('Veja os dashboards','https://app.powerbi.com/view?r=eyJrIjoiOTcxMmEwNjItN2U4MC00YmI0LTk4NmItNjBjNjMyODhiMzVhIiwidCI6ImZiMmIxMjBiLTdlMDMtNDQxZi1hNTJkLWVkODVkMzJiY2M3ZSJ9&pageName=ReportSection9479078add58ddd218d9')
+        
+        # Projetos GitHub
+        st.title('Projetos salvos no GitHub')
+        url = f'https://github.com/ttpepeu?tab=repositories'
+        response = requests.get(url)
+        soup = BeautifulSoup(response.content, "html.parser")
+
+
+        links = soup.find_all('a',{'itemprop':'name codeRepository'})
+
+        columnFirst = []
+        columnSecond = []
+        repositorys = []
+
+        addRepositorys = [repositorys.append(f'[{i.text.strip()}](https://github.com/ttpepeu/{i.text.strip()})') for i in links]
+
+        separator = [columnFirst.append(repositorys[i]) for i in range(len (repositorys)) if i%2 == 0]
+        separator = [columnSecond.append(repositorys[i]) for i in range(len (repositorys)) if i%2 == 1]
+
         col1, col2 = st.columns(2)
-        
+
         with col1:
-            """st.title('ChatBot')
-            st.image('img/chatbot.jpg')
-            st.info(
-                'Este chatbot está sendo desenvolvido para o laceb(Laboratório) do Mackenzie, com finalidade de fazer análise de dados das cidades da Região Metropolitana de Campinas.'
-                )
-            sub_col1, sub_col2 = st.columns(2)
-            with sub_col1:
-                button('Veja o código','#')
-            with sub_col2: 
-                button('Veja o bot','#')"""
-            st.title('Sistema de Banco')
-            st.image('img/atm.jpg')
-            st.info(
-                'Este repositório contém o desafio do curso de linguagem python da Digital Innovation One solucionado, objetivo era desenvolver um sistema de banco de maneira simples com as seguintes operações(Depósito, saque, extrato)'
-                )
-            button('Veja o código','https://github.com/ttpepeu/Sistema-de-Banco')
+            for i in columnFirst:
+                st.write(i)
 
-            st.title('Análise Telecom')
-            st.image('img/telecom01.jpg')
-            st.info(
-                'Nessa análise com python você verá o desempenho dos serviços da    empresa de telecom.'
-                )
-            button('Veja o código','https://github.com/ttpepeu/Python-Telecom/tree/main')
-        
-        with col2: 
-            st.title('Power BI')
-            st.image('img/pwoerbi.png')
-            st.info(
-                'Aqui você encontrará todos meus projetos feitos no Power BI.'
-                )
-            button('Veja os dashboards','https://app.powerbi.com/view?r=eyJrIjoiOTcxMmEwNjItN2U4MC00YmI0LTk4NmItNjBjNjMyODhiMzVhIiwidCI6ImZiMmIxMjBiLTdlMDMtNDQxZi1hNTJkLWVkODVkMzJiY2M3ZSJ9&pageName=ReportSection9479078add58ddd218d9')
-
-            st.title('Análise Covid-19')
-            st.image('img/covid.png')
-            st.info(
-                'Nessa análise com python você verá a evolução da covid-19 no Brasil.'
-                )
-            button('Veja o código','https://github.com/ttpepeu/PY-COVID19')
-
+        with col2:
+            for i in columnSecond:
+                st.write(i)
     
     def pag3(): # Pagina de contatos
         st.write('LinkedIn: [https://www.linkedin.com/in/ttpepeu/](https://www.linkedin.com/in/ttpepeu/)')
