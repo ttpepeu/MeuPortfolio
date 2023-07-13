@@ -61,6 +61,11 @@
     visibility: hidden;
 }
 
+[data-testid="stMarkdownContainer"]{
+    color: #ffffff;
+}
+
+
 footer{
     visibility: hidden;
 }
