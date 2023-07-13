@@ -7,7 +7,7 @@
 }
 
 
-[class="css-10trblm e16nr0p30"]{
+[class="css-10trblm eqr7zpz0"]{
     color: #D4ADFC;
 }
 
@@ -43,12 +43,18 @@
     color: #ffffff;
 }
 
+
 [class="css-1fv8s86 e16nr0p34"]{
     color: #ffffff;
 }
 
-[class="css-1fv8s86 e16nr0p34"]{
-    color: #ffffff;
+[data-testid="stText"]{
+    color:#ffffff;
+}
+
+
+[class="viewerBadge_link__qRIco"]{
+    visibility: hidden;
 }
 
 footer{
